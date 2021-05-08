@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a6d8198-f26e-4fa7-9fd9-08382d7a50c3" name="Default Changelist" comment="edit. add search" />
+    <list default="true" id="9a6d8198-f26e-4fa7-9fd9-08382d7a50c3" name="Default Changelist" comment="edit. add search">
+      <change afterPath="$PROJECT_DIR$/fahp/alt-faktor-veri-giris/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/alt-faktor-veri-giris/main-page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/alt-faktor-veri-giris/page-top-info.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/hesapla1/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/hesapla1/main-page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/hesapla1/page-top-info.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/hesapla2/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/hesapla2/main-page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/hesapla2/page-top-info.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/hesapla3/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/hesapla3/main-page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/hesapla3/page-top-info.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/hesapla4/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/hesapla4/main-page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/hesapla4/page-top-info.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fahp/listeleme/main-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/fahp/listeleme/main-page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netting/fahp/islem.php" beforeDir="false" afterPath="$PROJECT_DIR$/netting/fahp/islem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netting/fahp/tablo1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/netting/fahp/tablo1.csv" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,7 +69,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/fahp/listeleme" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/fahp" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -61,11 +81,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\AppServ\www\blnk\fahp\listeleme" />
-      <recent name="C:\AppServ\www\bulanik\fahp" />
-      <recent name="C:\AppServ\www\egomobilya\404" />
-      <recent name="C:\AppServ\www\egomobilya\search" />
-      <recent name="C:\AppServ\www\egomobilya\egoadmin\resimsube" />
+      <recent name="C:\AppServ\www\blnk\fahp" />
+      <recent name="C:\AppServ\www\blnk\fahp\hesapla3" />
+      <recent name="C:\AppServ\www\blnk\fahp\hesapla2" />
+      <recent name="C:\AppServ\www\blnk\fahp\hesapla1" />
+      <recent name="C:\AppServ\www\blnk\fahp\alt-faktor-veri-giris" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\AppServ\www\blnk\netting\fahp" />
@@ -189,7 +209,10 @@
       <workItem from="1619969045639" duration="1933000" />
       <workItem from="1619973695481" duration="69000" />
       <workItem from="1619973969371" duration="1300000" />
-      <workItem from="1620237437189" duration="5116000" />
+      <workItem from="1620237437189" duration="5432000" />
+      <workItem from="1620263102026" duration="1031000" />
+      <workItem from="1620317044660" duration="4186000" />
+      <workItem from="1620442101259" duration="4925000" />
     </task>
     <task id="LOCAL-00003" summary="slider işlemleri bitirildi">
       <created>1613302792023</created>

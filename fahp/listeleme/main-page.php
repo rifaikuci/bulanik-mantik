@@ -14,8 +14,8 @@ fclose($dosya);
             <div class="row">
                 <div class="col-12">
                     <div style="text-align: right;margin-right: auto">
-                        <a href="ekle" class="btn btn-primary"><i class="fa fa-plus"><?php echo "\t\t\t\t" ?>
-                                Ekle</i></a>
+                        <a href="../hesapla1" class="btn btn-primary"><i class="fa fa-calculator"><?php echo "\t\t\t\t" ?>
+                                Bulanık Ağırlıkları Hesapla</i></a>
                     </div>
                     <br>
                     <div class="card">
@@ -37,7 +37,7 @@ fclose($dosya);
                                         <td><?php echo $a?></td>
                                         <td><?php echo $kriterler[$i];?></td>
                                         <td>
-                                            <a href="#" class="btn btn-primary float-left">Alt Faktör Oluştur</a>
+                                            <a href="../alt-faktor-veri-giris/?id=<?php echo $i;?>" class="btn btn-primary float-left">Alt Faktör Oluştur</a>
 
                                         </td>
                                         <td>0</td>
