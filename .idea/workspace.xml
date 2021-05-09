@@ -4,26 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a6d8198-f26e-4fa7-9fd9-08382d7a50c3" name="Default Changelist" comment="edit. add search">
-      <change afterPath="$PROJECT_DIR$/fahp/alt-faktor-veri-giris/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/alt-faktor-veri-giris/main-page.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/alt-faktor-veri-giris/page-top-info.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/hesapla1/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/hesapla1/main-page.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/hesapla1/page-top-info.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/hesapla2/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/hesapla2/main-page.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/hesapla2/page-top-info.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/hesapla3/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/hesapla3/main-page.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/hesapla3/page-top-info.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/hesapla4/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/hesapla4/main-page.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/hesapla4/page-top-info.php" afterDir="false" />
+    <list default="true" id="9a6d8198-f26e-4fa7-9fd9-08382d7a50c3" name="Default Changelist" comment="ana faktor FAHP değerleri hesaplama">
+      <change afterPath="$PROJECT_DIR$/fahp/alt1/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/alt1/main-page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/alt1/page-top-info.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/alt2/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/alt2/main-page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/alt2/page-top-info.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/alt3/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/alt3/main-page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/alt3/page-top-info.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/alt4/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/alt4/main-page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/alt4/page-top-info.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/test/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/test/main-page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/test/page-top-info.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/testsonuc/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/testsonuc/main-page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fahp/testsonuc/page-top-info.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fahp/hesapla4/main-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/fahp/hesapla4/main-page.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fahp/listeleme/main-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/fahp/listeleme/main-page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/include/head.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/netting/fahp/islem.php" beforeDir="false" afterPath="$PROJECT_DIR$/netting/fahp/islem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/netting/fahp/tablo1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/netting/fahp/tablo1.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netting/fahp/tablo1.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +74,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/fahp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/fahp/testsonuc" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -81,11 +86,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\AppServ\www\blnk\fahp" />
-      <recent name="C:\AppServ\www\blnk\fahp\hesapla3" />
-      <recent name="C:\AppServ\www\blnk\fahp\hesapla2" />
-      <recent name="C:\AppServ\www\blnk\fahp\hesapla1" />
-      <recent name="C:\AppServ\www\blnk\fahp\alt-faktor-veri-giris" />
+      <recent name="C:\AppServ\www\blnk\fahp\testsonuc" />
+      <recent name="C:\AppServ\www\blnk\fahp\test" />
+      <recent name="C:\AppServ\www\blnk\fahp\alt4" />
+      <recent name="C:\AppServ\www\blnk\fahp\alt3" />
+      <recent name="C:\AppServ\www\blnk\fahp\alt2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\AppServ\www\blnk\netting\fahp" />
@@ -213,13 +218,10 @@
       <workItem from="1620263102026" duration="1031000" />
       <workItem from="1620317044660" duration="4186000" />
       <workItem from="1620442101259" duration="4925000" />
-    </task>
-    <task id="LOCAL-00003" summary="slider işlemleri bitirildi">
-      <created>1613302792023</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1613302792024</updated>
+      <workItem from="1620466293146" duration="6680000" />
+      <workItem from="1620481535424" duration="10937000" />
+      <workItem from="1620556834753" duration="311000" />
+      <workItem from="1620557951374" duration="10176000" />
     </task>
     <task id="LOCAL-00004" summary="kategori işlemleri bitirildi">
       <created>1613316750291</created>
@@ -557,7 +559,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618857235608</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="ana faktor FAHP değerleri hesaplama">
+      <created>1620466319672</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1620466319672</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -576,7 +585,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commit table" />
     <MESSAGE value="..." />
     <MESSAGE value="ckeditor" />
     <MESSAGE value="personel added" />
@@ -601,7 +609,8 @@
     <MESSAGE value="front düzenlemeler." />
     <MESSAGE value="sidebar-left edit." />
     <MESSAGE value="edit. add search" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit. add search" />
+    <MESSAGE value="ana faktor FAHP değerleri hesaplama" />
+    <option name="LAST_COMMIT_MESSAGE" value="ana faktor FAHP değerleri hesaplama" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

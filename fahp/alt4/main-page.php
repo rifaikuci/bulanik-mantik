@@ -1,15 +1,26 @@
 <?php
-$dosya = fopen("../../netting/fahp/tablo1.csv", 'r');
-$icerik = fread($dosya, filesize("../../netting/fahp/tablo1.csv"));
+$dosya = fopen("../../netting/fahp/alt1.csv", 'r');
+$icerik = fread($dosya, filesize("../../netting/fahp/alt1.csv"));
+$altfaktor = explode("\n", $icerik);
 
-$ayirac = explode(",", $icerik);
+$item = null;
+foreach($altfaktor as $alt) {
+    if ($_GET['id'] == substr($alt,0,1)) {
+        $item = $alt;
+        break;
+    }
+}
+
+$item = substr($item,2);
+$ayirac = explode(",", $item);
+
 $kriterUzunluk = count($ayirac);
 
 fclose($dosya);
 
 
-$dosyaDegerler = fopen("../../netting/fahp/tablo3.csv", 'r');
-$icerikDegerler = fread($dosyaDegerler, filesize("../../netting/fahp/tablo3.csv"));
+$dosyaDegerler = fopen("../../netting/fahp/alt3.csv", 'r');
+$icerikDegerler = fread($dosyaDegerler, filesize("../../netting/fahp/alt3.csv"));
 
 $ayiracSatirlar = explode("\n", $icerikDegerler);
 array_pop($ayiracSatirlar);
@@ -26,16 +37,17 @@ for ($i = 0; $i < count($ayiracSatirlar); $i++) {
 
 fclose($dosyaDegerler);
 
-$dosya1 = fopen("../../netting/fahp/tablo4.csv", 'r');
-$icerik1 = fread($dosya1, filesize("../../netting/fahp/tablo4.csv"));
+$dosya1 = fopen("../../netting/fahp/alt4.csv", 'r');
+$icerik1 = fread($dosya1, filesize("../../netting/fahp/alt4.csv"));
 fclose($dosya1);
 $bolenler = explode(",", $icerik1);
 
 
-$dosyaSonuc= fopen("../../netting/fahp/tablo5.csv", 'r');
-$icerikSonuc= fread($dosyaSonuc, filesize("../../netting/fahp/tablo5.csv"));
+$dosyaname = "altsonuc".$_GET['id'].".csv";
+$dosyaSonuc= fopen("../../netting/fahp/$dosyaname", 'r');
+$icerikSonuc= fread($dosyaSonuc, filesize("../../netting/fahp/$dosyaname"));
 
-$ayiracSonuc = explode("<br>", $icerikSonuc);
+$ayiracSonuc = explode("\n", $icerikSonuc);
 array_pop($ayiracSonuc);
 
 $sonuclar = [];
@@ -100,7 +112,7 @@ fclose($dosyaSonuc);
                   method="post"
                   class="form-horizontal">
                 <div style="text-align: center">
-                    <h3 style="color: #0b93d5"> Fuzzy AHP Bulanık Değerleri </h3>
+                    <h3 style="color: #0b93d5"> Fuzzy AHP Ağırlık Değerleri </h3>
                 </div>
             <table id="example2" class="table table-bordered table-striped">
                 <thead>
