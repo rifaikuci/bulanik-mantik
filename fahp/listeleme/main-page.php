@@ -340,7 +340,7 @@ if (file_exists("../../netting/fahp/alt1.csv")) {
                             <tr>
                                 <th>#</th>
                                 <th>Aday</th>
-                                <th>Değerler</th>
+                                <th>Sonuç Değerleri</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -362,11 +362,35 @@ if (file_exists("../../netting/fahp/alt1.csv")) {
 
                     </div>
                 </div>
+                <?php
 
+                $toplam = array();
+                $isim = "";
+                $maxx = 0;
+                for ($i = 0; $i < count($sonuclar) - 1; $i++) {
+                    $minsum = 0;
+                    $sonuclarsatir = explode(",", $sonuclar[$i]);
+                    $minsum = $sonuclarsatir[1]+ $sonuclarsatir[2]+ $sonuclarsatir[3];
+                    $minsum =number_format($minsum/3,2);
+                    array_push($toplam,$minsum);
+
+
+                    if(max($toplam) == $minsum) {
+
+                        $isim = $sonuclarsatir[0];
+
+                    }
+
+
+                }
+                ?>
+                <br><br><hr>
+                <div style="text-align: center">
+                    <h4 style="color: #0b93d5"> En iyi Sonuç :  <?php echo $isim ?> </h4>
+                </div>
             <?php } ?>
 
+
         </div>
-
-
     </div>
 </section>

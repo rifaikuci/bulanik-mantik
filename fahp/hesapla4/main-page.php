@@ -107,7 +107,6 @@ fclose($dosyaSonuc);
                 <tr>
                     <th style="width: 50px;text-align: center;">#</th>
                     <th style="text-align: center;">Ağırlık Değerleri</th>
-                    <th style="text-align: center;">Ağırlık Ortalaması</th>
                 </tr>
                 </thead>
 
@@ -150,33 +149,13 @@ fclose($dosyaSonuc);
 
                             <b> <?php echo $deger; ?></b>
                         </td>
-
-                        <td style="text-align: center">
-
-                            <?php
-
-                            $degerOrtalamasi =0;
-                            for ($i = 0; $i < 3; $i++) {
-                                $degerOrtalamasi = $degerOrtalamasi + $sonuclar[$k][$i];
-                            }
-
-                            ?>
-
-                            <b> <?php
-                                $degerOrtalamasi = round($degerOrtalamasi/3,3);
-                                array_push($agirlikOrtalamaSonuclari,$degerOrtalamasi);
-                                echo $degerOrtalamasi; ?></b>
-                        </td>
                     </tr>
                 <?php } ?>
 
             </table>
                 <br>
 
-                <div style="text-align: center"><h3><b><?php
-                            $index = array_search(max($agirlikOrtalamaSonuclari), $agirlikOrtalamaSonuclari);
-                            echo "En iyi Seçim : " . $ayirac[$index] . ", Değer = " . max($agirlikOrtalamaSonuclari);
-                            ?></b></h3></div>
+
                 <div class="card-footer">
                     <div>
                         <a href='../listeleme' class="btn btn-info float-right">Devam Et<a/>

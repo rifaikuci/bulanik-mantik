@@ -4,31 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a6d8198-f26e-4fa7-9fd9-08382d7a50c3" name="Default Changelist" comment="ana faktor FAHP değerleri hesaplama">
-      <change afterPath="$PROJECT_DIR$/fahp/alt1/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/alt1/main-page.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/alt1/page-top-info.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/alt2/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/alt2/main-page.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/alt2/page-top-info.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/alt3/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/alt3/main-page.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/alt3/page-top-info.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/alt4/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/alt4/main-page.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/alt4/page-top-info.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/test/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/test/main-page.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/test/page-top-info.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/testsonuc/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/testsonuc/main-page.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fahp/testsonuc/page-top-info.php" afterDir="false" />
+    <list default="true" id="9a6d8198-f26e-4fa7-9fd9-08382d7a50c3" name="Default Changelist" comment="fahp tamamlandı.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fahp/hesapla4/main-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/fahp/hesapla4/main-page.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fahp/listeleme/main-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/fahp/listeleme/main-page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/include/head.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/netting/fahp/islem.php" beforeDir="false" afterPath="$PROJECT_DIR$/netting/fahp/islem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/netting/fahp/tablo1.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,14 +200,10 @@
       <workItem from="1620466293146" duration="6680000" />
       <workItem from="1620481535424" duration="10937000" />
       <workItem from="1620556834753" duration="311000" />
-      <workItem from="1620557951374" duration="10176000" />
-    </task>
-    <task id="LOCAL-00004" summary="kategori işlemleri bitirildi">
-      <created>1613316750291</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1613316750291</updated>
+      <workItem from="1620557951374" duration="10905000" />
+      <workItem from="1620579256374" duration="924000" />
+      <workItem from="1620584738549" duration="4000" />
+      <workItem from="1623590804914" duration="2274000" />
     </task>
     <task id="LOCAL-00005" summary="kategori işlemleri bitirildidf">
       <created>1613317150759</created>
@@ -566,7 +541,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620466319672</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="fahp tamamlandı.">
+      <created>1620568639274</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1620568639274</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,7 +567,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="..." />
     <MESSAGE value="ckeditor" />
     <MESSAGE value="personel added" />
     <MESSAGE value="Müsteri ekleme, güncelleme ve silme" />
@@ -610,7 +591,8 @@
     <MESSAGE value="sidebar-left edit." />
     <MESSAGE value="edit. add search" />
     <MESSAGE value="ana faktor FAHP değerleri hesaplama" />
-    <option name="LAST_COMMIT_MESSAGE" value="ana faktor FAHP değerleri hesaplama" />
+    <MESSAGE value="fahp tamamlandı." />
+    <option name="LAST_COMMIT_MESSAGE" value="fahp tamamlandı." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
