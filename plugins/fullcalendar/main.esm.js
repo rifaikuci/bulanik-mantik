@@ -5318,7 +5318,7 @@ var DateProfileGenerator = /** @class */ (function () {
             // will be `null` if no dates accept events
             activeRange: activeRange,
             // date range with a rendered skeleton
-            // include not-active days that need some sort of DOM
+            // includes not-active days that need some sort of DOM
             renderRange: renderRange,
             // Duration object that denotes the first visible time of any given day
             minTime: minTime,
@@ -8216,7 +8216,7 @@ function renderDateCell(dateMarker, dateProfile, datesRepDistinctDays, colCnt, c
     // if only one row of days, the classNames on the header can represent the specific days beneath
     if (datesRepDistinctDays) {
         classNames = classNames.concat(
-        // include the day-of-week class
+        // includes the day-of-week class
         // noThemeHighlight=true (don't highlight the header)
         getDayClasses(dateMarker, dateProfile, context, true));
     }

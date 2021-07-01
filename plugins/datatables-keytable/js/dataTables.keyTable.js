@@ -656,7 +656,7 @@ $.extend( KeyTable.prototype, {
 			}
 
 			// For server-side processing normalise the row by adding the start
-			// point, since `rows().indexes()` include only rows that are
+			// point, since `rows().indexes()` includes only rows that are
 			// available at the client-side
 			if ( pageInfo.serverSide ) {
 				row += pageInfo.start;
