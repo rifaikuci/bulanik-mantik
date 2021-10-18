@@ -14,7 +14,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <a href=<?php echo base_url() ?> class="brand-link">
 
-            <span style="color: #0b93d5;font-weight: bold" class="brand-text">Damızlık Seçimi</span>
+            <span style="color: #0b93d5;font-weight: bold" class="brand-text"><?php echo $_SESSION['kullanici'] ? $_SESSION['kullanici'] : "Damızlık Seçimi"  ?></span>
         </a>
 
         <div class="sidebar">

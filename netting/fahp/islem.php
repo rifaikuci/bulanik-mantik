@@ -1,9 +1,6 @@
 <?php
-include '../netting/baglan.php';
-include '../include/helper.php';
+include 'baglan.php';
 date_default_timezone_set('Europe/Istanbul');
-
-ini_set('display_errors', 1);
 
 if (isset($_POST['anafaktorekleme'])) {
 
@@ -252,4 +249,144 @@ if (isset($_POST['testkaydet'])) {
     header("Location:../../fahp/listeleme/");
     exit();
 }
+
+if (isset($_GET['silmodel'])) {
+
+    echo $id =$_GET['silmodel'];
+    $sql = "DELETE FROM models  
+        where id = '$id' ";
+
+    if (mysqli_query($db, $sql)) {
+        header("Location:../../fahp/models/");
+        exit();
+    } else {
+        header("Location:../../fahp/models/");
+        exit();
+    }
+
+}
+
+
+if (isset($_POST['modelkaydet'])) {
+
+     $name = $_POST['name'];
+     $dbKriter = $_POST['dbKriter'];
+     $dbAltKriter = $_POST['dbAltKriter'];
+     $dbKriterSonuc = $_POST['dbKriterSonuc'];
+     $dbAnaFaktorDegerleri = $_POST['dbAnaFaktorDegerleri'];
+     $dbAnaFaktorOrtalamasi = $_POST['dbAnaFaktorOrtalamasi'];
+     $dbGlobalAgirliklari = $_POST['dbGlobalAgirliklari'];
+     $kullanici = $_POST['kullanici'];
+
+    $sql = "INSERT INTO models (name, dbKriter, dbAltKriter,dbKriterSonuc, dbAnaFaktorDegerleri,
+                       dbAnaFaktorOrtalamasi, dbGlobalAgirliklari, kullanici    ) VALUES ('$name', '$dbKriter', '$dbAltKriter',
+                    '$dbKriterSonuc','$dbAnaFaktorDegerleri', '$dbAnaFaktorOrtalamasi', '$dbGlobalAgirliklari', '$kullanici')";
+
+    if (mysqli_query($db, $sql)) {
+        header("Location:../../fahp/models/");
+        exit();
+    } else {
+        header("Location:../../fahp/models/");
+        exit();
+    }
+}
+
+if (isset($_POST['modeltestsonuclari'])) {
+
+    $dosya = fopen(__DIR__ ."/altfaktordegerler.csv", 'r');
+    $icerik = fread($dosya, filesize(__DIR__ ."/altfaktordegerler.csv"));
+
+    $kriterler = explode("\n", $icerik);
+    fclose($dosya);
+    $deger = "";
+    $puan = "";
+    for($i = 0; $i<count($kriterler)-1; $i++) {
+        $kriterbol = explode(",", $kriterler[$i]);
+        $c = 0;
+        while ($c < 3 ){
+            $sonuc = 0;
+            $b = $c+1;
+            if($c ==2) {
+                $sonuc = $_POST["$i;$c"] * $kriterbol[$b];
+                $deger =  $deger. $sonuc;
+                $puan = $puan.$_POST["$i;$c"];
+            }else{
+                $sonuc = $_POST["$i;$c"] * $kriterbol[$b];
+                $deger = $deger.$sonuc.",";
+                $puan = $puan.$_POST["$i;$c"].",";
+
+            }
+            $c++;
+        }
+        $deger = $deger."\n";
+        $puan = $puan."\n";
+
+    }
+    $ac = fopen(__DIR__ . "/testsonuc.csv", "w+");
+    fwrite($ac, $deger);
+    fclose($ac);
+
+    $ac2 = fopen(__DIR__ . "/puan.csv", "w+");
+    fwrite($ac2,  $puan);
+    fclose($ac2);
+    header("Location:../../fahp/models/testsonuc/");
+    exit();
+}
+
+if (isset($_POST['modeltestkaydet'])) {
+
+    $deger =$_POST["aday"].",".$_POST["toplam1"].",".$_POST["toplam2"].",".$_POST["toplam3"]."\n";
+    $ac = fopen(__DIR__ . "/sonuc.csv", "a+");
+    fwrite($ac, $deger);
+    fclose($ac);
+    header("Location:../../fahp/models/model/");
+    exit();
+}
+
+if (isset($_POST['kayitol'])) {
+
+    $ad = $_POST['ad'];
+    $mail = $_POST['mail'];
+    $password = $_POST['password'];
+
+    $sql = "INSERT INTO kullanici (ad, mail, password) VALUES ('$ad', '$mail', '$password')";
+    if (mysqli_query($db, $sql)) {
+        header("Location:../../login/");
+        exit();
+    } else {
+        header("Location:../../login/register.php");
+        exit();
+    }
+}
+
+if (isset($_POST['girisyap'])) {
+    session_start();
+    $ad = $_POST['ad'];
+    $password = $_POST['password'];
+
+    $sql = "SELECT * FROM kullanici WHERE mail = '$ad'  AND password = '$password'";
+    $sonuc = mysqli_query($db, $sql);
+    $row = $sonuc->fetch_assoc();
+
+    if (count($row) > 0) {
+        $_SESSION['kullanici'] = $row['ad'];
+        header("Location:../../");
+        exit();
+    } else {
+        header("Location:../../login/?kullanici=no");
+        exit();
+    }
+
+}
+
+if (isset($_GET['cikisyap']) == true) {
+    session_start();
+
+    session_destroy();
+
+    echo "<script>window.location.href='../../../login/';</script>";
+
+
+}
+
 ?>

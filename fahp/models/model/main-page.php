@@ -1,6 +1,76 @@
 <?php
-$dosya = fopen("../../netting/fahp/tablo1.csv", 'r');
-$icerik = fread($dosya, filesize("../../netting/fahp/tablo1.csv"));
+
+if($_GET['id']){
+
+
+    $id = $_GET['id'];
+
+    include '../../../netting/fahp/baglan.php';
+    $sql = "SELECT * FROM models WHERE id = '$id'";
+    $result = mysqli_query($db, $sql);
+    $row = $result->fetch_assoc();
+
+    $kriter = $_POST['kriter'];
+//  Tablo 1 için
+    $tablo1 = fopen( "../../../netting/fahp/tablo1.csv", "w+");
+    $tabloDeger1 = $row['dbKriter'];
+    fwrite($tablo1, $tabloDeger1);
+    fclose($tablo1);
+
+
+
+    // alt1 için
+    $alt1Deger = explode(";",$row['dbAltKriter']);
+    $tempDeger1="";
+    for($i = 0; $i< count($alt1Deger); $i++ ) {
+        $alt1Deger[$i] = $i.",".$alt1Deger[$i];
+        $tempDeger1 = $tempDeger1."\n".$alt1Deger[$i];
+    }
+    $tempDeger1 = substr($tempDeger1,1);
+
+    $alt1 = fopen( "../../../netting/fahp/alt1.csv", "w+");
+    fwrite($alt1, $tempDeger1);
+    fclose($alt1);
+
+    // Alt Sonuc İçin okunma işlemleri yapıldı.
+     $bol = explode(';',$row['dbKriterSonuc']);
+    for($i = 0; $i<count($bol); $i++) {
+        $parcala = explode("-",$bol[$i]);
+        $tabloDegerlerSonuclari = "";
+        for($k = 0; $k< count($parcala); $k++) {
+            $tabloDegerlerSonuclari= $tabloDegerlerSonuclari.$parcala[$k]."\n";
+        }
+        $dosyaname = "altsonuc".$i.".csv";
+        $degerlerTablosu = fopen( "../../../netting/fahp/$dosyaname", "w+");
+        fwrite( $degerlerTablosu,$tabloDegerlerSonuclari);
+        fclose($degerlerTablosu);
+
+    }
+    
+        // tablo 5 için
+
+    $tablo5Gecici = str_replace(";","\n",$row['dbAnaFaktorDegerleri']);
+    $tablo5 = fopen( "../../../netting/fahp/tablo5.csv", "w+");
+    $tablo5Gecici = $tablo5Gecici."\n";
+
+    fwrite($tablo5, $tablo5Gecici);
+    fclose($tablo5);
+
+
+    // tablo 4 için
+
+
+
+
+
+
+}
+
+?>
+
+<?php
+$dosya = fopen("../../../netting/fahp/tablo1.csv", 'r');
+$icerik = fread($dosya, filesize("../../../netting/fahp/tablo1.csv"));
 
 $kriterler = explode(",", $icerik);
 $kriterUzunluk = count($kriterler);
@@ -13,23 +83,29 @@ $dbAnaFaktorOrtalamasi = "";
 $dbGlobalAgirliklari = "";
 
 fclose($dosya);
-if (file_exists("../../netting/fahp/alt1.csv")) {
-    $dosya2 = fopen("../../netting/fahp/alt1.csv", 'r');
-    $faktorler = fread($dosya2, filesize("../../netting/fahp/alt1.csv"));
+if (file_exists("../../../netting/fahp/alt1.csv")) {
+    $dosya2 = fopen("../../../netting/fahp/alt1.csv", 'r');
+    $faktorler = fread($dosya2, filesize("../../../netting/fahp/alt1.csv"));
 
     $altfaktor = explode("\n", $faktorler);
-
     fclose($dosya2);
 }
-
 ?>
 
+
+<div style="text-align:  center">
+    <h1 style="color: #2b6b4f"> <?php echo $row['name'];?></h1>
+
+</div>
+<br>
+<br>
+<br>
 <section class="content">
     <div class="card">
         <div class="card-body">
             <div class="row">
                 <div class="col-12">
-                    <?php if (!file("../../netting/fahp/tablo5.csv")) { ?>
+                    <?php if (!file("../../../netting/fahp/tablo5.csv")) { ?>
                         <div style="text-align: right;margin-right: auto">
                             <a href="../hesapla1" class="btn btn-primary"><i
                                         class="fa fa-calculator"><?php echo "\t\t\t\t" ?>
@@ -77,11 +153,11 @@ if (file_exists("../../netting/fahp/alt1.csv")) {
                                         <td style="font-weight: bold">
                                             <?php
                                             $name = "altsonuc" . $i . ".csv";
-                                            if ($item && file_exists("../../netting/fahp/$name")) { ?>
+                                            if ($item && file_exists("../../../netting/fahp/$name")) { ?>
 
                                                 <?php
-                                                $dosya = fopen("../../netting/fahp/$name", 'r');
-                                                $icerik = fread($dosya, filesize("../../netting/fahp/$name"));
+                                                $dosya = fopen("../../../netting/fahp/$name", 'r');
+                                                $icerik = fread($dosya, filesize("../../../netting/fahp/$name"));
                                                 $icerikAktar = str_replace("\n", "-", $icerik);
                                                 $icerik = str_replace("\n", "<br>", $icerik);
                                                 echo $icerik;
@@ -117,7 +193,7 @@ if (file_exists("../../netting/fahp/alt1.csv")) {
                 </div>
             </div>
 
-            <?php if (file("../../netting/fahp/tablo5.csv")) { ?>
+            <?php if (file("../../../netting/fahp/tablo5.csv")) { ?>
                 <br>
                 <hr>
                 <div>
@@ -126,8 +202,8 @@ if (file_exists("../../netting/fahp/alt1.csv")) {
                     </div>
                 </div>
                 <?php
-                $dosya = fopen("../../netting/fahp/tablo1.csv", 'r');
-                $icerik = fread($dosya, filesize("../../netting/fahp/tablo1.csv"));
+                $dosya = fopen("../../../netting/fahp/tablo1.csv", 'r');
+                $icerik = fread($dosya, filesize("../../../netting/fahp/tablo1.csv"));
 
                 $ayirac = explode(",", $icerik);
                 $kriterUzunluk = count($ayirac);
@@ -135,32 +211,8 @@ if (file_exists("../../netting/fahp/alt1.csv")) {
                 fclose($dosya);
 
 
-                $dosyaDegerler = fopen("../../netting/fahp/tablo3.csv", 'r');
-                $icerikDegerler = fread($dosyaDegerler, filesize("../../netting/fahp/tablo3.csv"));
-
-                $ayiracSatirlar = explode("\n", $icerikDegerler);
-                array_pop($ayiracSatirlar);
-
-                $degerler = [];
-
-
-                for ($i = 0; $i < count($ayiracSatirlar); $i++) {
-                    $ekle = "ekle" . $i;
-                    $ekle = explode(",", $ayiracSatirlar[$i]);
-                    array_push($degerler, $ekle);
-                }
-
-
-                fclose($dosyaDegerler);
-
-                $dosya1 = fopen("../../netting/fahp/tablo4.csv", 'r');
-                $icerik1 = fread($dosya1, filesize("../../netting/fahp/tablo4.csv"));
-                fclose($dosya1);
-                $bolenler = explode(",", $icerik1);
-
-
-                $dosyaSonuc = fopen("../../netting/fahp/tablo5.csv", 'r');
-                $icerikSonuc = fread($dosyaSonuc, filesize("../../netting/fahp/tablo5.csv"));
+                $dosyaSonuc = fopen("../../../netting/fahp/tablo5.csv", 'r');
+                $icerikSonuc = fread($dosyaSonuc, filesize("../../../netting/fahp/tablo5.csv"));
 
                 $ayiracSonuc = explode("\n", $icerikSonuc);
                 array_pop($ayiracSonuc);
@@ -211,7 +263,7 @@ if (file_exists("../../netting/fahp/alt1.csv")) {
 
                                 $degerOrtalamasi = 0;
                                 for ($i = 0; $i < 3; $i++) {
-                                    $degerOrtalamasi = $degerOrtalamasi + $sonuclar[$k][$i];
+                                    $degerOrtalamasi = $degerOrtalamasi + trim($sonuclar[$k][$i]);
                                 }
 
                                 ?>
@@ -242,8 +294,8 @@ if (file_exists("../../netting/fahp/alt1.csv")) {
             $dbAnaFaktorOrtalamasi = substr($dbAnaFaktorOrtalamasi, 1);
             $dbAnaFaktorOrtalamasi[strlen($dbAnaFaktorOrtalamasi) - 1] = " ";
 
-            $dosyaana = fopen("../../netting/fahp/tablo5.csv", 'r');
-            $icerikana = fread($dosyaana, filesize("../../netting/fahp/tablo5.csv"));
+            $dosyaana = fopen("../../../netting/fahp/tablo5.csv", 'r');
+            $icerikana = fread($dosyaana, filesize("../../../netting/fahp/tablo5.csv"));
 
             $kriterana = explode("\n", $icerikana);
             fclose($dosyaana);
@@ -253,14 +305,14 @@ if (file_exists("../../netting/fahp/alt1.csv")) {
             $sonucgoster = false;
             for ($i = 0; $i < $kriterUzunluk; $i++) {
                 $name = "altsonuc" . $i . ".csv";
-                if (file_exists("../../netting/fahp/$name")) {
+                if (file_exists("../../../netting/fahp/$name")) {
                     $sonucgoster = true;
                 } else {
                     $sonucgoster = false;
                     break;
                 }
             }
-            if (file("../../netting/fahp/tablo5.csv") && $sonucgoster) { ?>
+            if (file("../../../netting/fahp/tablo5.csv") && $sonucgoster) { ?>
                 <br>
                 <div>
                     <div style="text-align: center">
@@ -302,8 +354,8 @@ if (file_exists("../../netting/fahp/alt1.csv")) {
                                         <?php
                                         $name = "altsonuc" . $i . ".csv";
 
-                                        $dosya = fopen("../../netting/fahp/$name", 'r');
-                                        $icerik = fread($dosya, filesize("../../netting/fahp/$name"));
+                                        $dosya = fopen("../../../netting/fahp/$name", 'r');
+                                        $icerik = fread($dosya, filesize("../../../netting/fahp/$name"));
                                         $iceriksonuc = explode("\n", $icerik);
                                         $item = substr($item, 2);
                                         $items = explode(",", $item);
@@ -329,17 +381,18 @@ if (file_exists("../../netting/fahp/alt1.csv")) {
                                             for ($c = 0; $c < count($kriterbol); $c++) {
 
                                                 if ($c == count($kriterbol) - 1) {
-                                                    $deger = $deger . round($kriterbol[$c] * $icerikbol[$c], 3);
-                                                    $aktar = round($kriterbol[$c] * $icerikbol[$c], 3);
-                                                    $aktarDb = round($kriterbol[$c] * $icerikbol[$c], 3);
+                                                    $deger = $deger . round(trim($kriterbol[$c]) * trim($icerikbol[$c]), 3);
+                                                    $aktar = round(trim($kriterbol[$c]) * trim($icerikbol[$c]), 3);
+                                                    $aktarDb = round(trim($kriterbol[$c]) * trim($icerikbol[$c]), 3);
                                                     echo $aktar;
                                                     $dbGlobalAgirliklari = $dbGlobalAgirliklari . "," . $aktarDb;
 
                                                 } else {
-                                                    $deger = $deger . round($kriterbol[$c] * $icerikbol[$c], 3) . ",";
+                                                    $deger = $deger . round(trim($kriterbol[$c]) *
+                                                            trim($icerikbol[$c]), 3) . ",";
 
-                                                    $aktarDb = round($kriterbol[$c] * $icerikbol[$c], 3);
-                                                    $aktar = round($kriterbol[$c] * $icerikbol[$c], 3) . " , ";
+                                                    $aktarDb = round(trim($kriterbol[$c]) * trim($icerikbol[$c]), 3);
+                                                    $aktar = round(trim($kriterbol[$c]) * trim($icerikbol[$c]), 3) . " , ";
                                                     echo $aktar;
                                                     $dbGlobalAgirliklari = $dbGlobalAgirliklari . "," . $aktarDb;
 
@@ -358,12 +411,7 @@ if (file_exists("../../netting/fahp/alt1.csv")) {
                             </tbody>
                         </table>
                         <?php
-                        $ac = fopen("../../netting/fahp/altfaktordegerler.csv", "w+");
-                        $dbGlobalAgirliklari = substr($dbGlobalAgirliklari, 1);
-                        $dbGlobalAgirliklari = str_replace("-,", "-", $dbGlobalAgirliklari);
-                        $dbGlobalAgirliklari = str_replace("-;", ";", $dbGlobalAgirliklari);
-                        $dbGlobalAgirliklari = str_replace(";,", ";", $dbGlobalAgirliklari);
-                        $dbGlobalAgirliklari[strlen($dbGlobalAgirliklari) - 1] = " ";
+                        $ac = fopen("../../../netting/fahp/altfaktordegerler.csv", "w+");
 
                         fwrite($ac, $deger);
                         fclose($ac);
@@ -377,9 +425,9 @@ if (file_exists("../../netting/fahp/alt1.csv")) {
 
             <?php
 
-            if (file("../../netting/fahp/sonuc.csv")) {
-                $sonucfaktor = fopen("../../netting/fahp/sonuc.csv", 'r');
-                $sonucana = fread($sonucfaktor, filesize("../../netting/fahp/sonuc.csv"));
+            if (file("../../../netting/fahp/sonuc.csv")) {
+                $sonucfaktor = fopen("../../../netting/fahp/sonuc.csv", 'r');
+                $sonucana = fread($sonucfaktor, filesize("../../../netting/fahp/sonuc.csv"));
 
                 $sonuclar = explode("\n", $sonucana);
                 fclose($sonucfaktor);
@@ -452,53 +500,4 @@ if (file_exists("../../netting/fahp/alt1.csv")) {
         </div>
     </div>
 
-    <?php if($_SESSION['kullanici']) { ?>
-
-    <div style="margin: 30px">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Modeli Kaydet
-        </button>
-    </div>
-
-    <?php } ?>
-    <div class="modal fade bd-example-modal-sm" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
-
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <form action="../../netting/fahp/islem.php"
-                  method="post"
-                  class="form-horizontal">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <input required type="text" name="name" class="form-control form-control-sm"
-                            placeholder="Model Adı Giriniz"
-                            >
-
-                            <input type="hidden" name="dbKriter" value="<?php echo $dbKriter?>" >
-                            <input type="hidden" name="dbAltKriter" value="<?php echo $dbAltKriter?>">
-                            <input type="hidden" name="dbKriterSonuc" value="<?php echo $dbKriterSonuc?>">
-                            <input type="hidden" name="dbAnaFaktorDegerleri" value="<?php echo $dbAnaFaktorDegerleri?>">
-                            <input type="hidden" name="dbAnaFaktorOrtalamasi" value="<?php echo $dbAnaFaktorOrtalamasi?>">
-                            <input type="hidden" name="dbGlobalAgirliklari" value="<?php echo $dbGlobalAgirliklari?>">
-                            <input type="hidden" name="dbGlobalAgirliklari" value="<?php echo $dbGlobalAgirliklari?>">
-                            <input type="hidden" name="kullanici" value="<?php echo $_SESSION['kullanici']?>">
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <button type="submit"
-                                    style="padding-left: 50px; padding-right: 50px; font-size: 14px; font-weight: bold"
-                                    name="modelkaydet" class="btn btn-primary"> Modeli Kaydet
-                            </button>
-
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-
-    </div>
 </section>

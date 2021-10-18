@@ -4,7 +4,10 @@
 <script src=<?php echo base_url() . "dist/js/demo.js" ?>></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src=<?php echo base_url() . "dist/js/fahp.js" ?>></script>
+<script>
 
+
+</script>
 
 
 
